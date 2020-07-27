@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		<property name="hibernate.hbm2ddl.auto">none</property>
+		<property name="hibernate.show_sql">true</property>
+		
+		<!-- 配置启用二级缓存 -->
+		<property name="hibernate.cache.use_second_level_cache">true</property>
+		
+		<!--配置二级缓存的供应商 -->
+		<property name="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
+		
+		<!-- 启用查询缓存 -->
+		<property name="hibernate.cache.use_query_cache">true</property>
+        <mapping resource="com/qq/entity/Employee.hbm.xml"/>
+        <mapping resource="com/qq/entity/Uploadfile.hbm.xml"/>
+        <mapping resource="com/qq/entity/Department.hbm.xml"/>
+        <mapping resource="com/qq/entity/Emails.hbm.xml"/>
+        <mapping resource="com/qq/entity/Meetingroom.hbm.xml"/>
+        <mapping resource="com/qq/entity/Meeting.hbm.xml"/>
+        <mapping resource="com/qq/entity/Goals.hbm.xml"/>
+        <mapping resource="com/qq/entity/Notice.hbm.xml"/>
+        <mapping resource="com/qq/entity/Signin.hbm.xml"/>
+    </session-factory>
+    
+    
+</hibernate-configuration>
